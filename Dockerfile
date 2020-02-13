@@ -1,5 +1,5 @@
 ARG DISCOURSE_VERSION
-FROM indiehosters/discourse:${DISCOURSE_VERSION} as discourse
+FROM libresh/discourse:${DISCOURSE_VERSION} as discourse
 FROM nginx
 COPY --from=discourse /home/discourse/discourse/public /home/discourse/discourse/public
 VOLUME /var/nginx/cache

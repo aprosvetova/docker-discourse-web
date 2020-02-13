@@ -1,4 +1,5 @@
-FROM indiehosters/discourse:2.2.0.beta4 as discourse
+ARG DISCOURSE_VERSION
+FROM indiehosters/discourse:${DISCOURSE_VERSION} as discourse
 FROM nginx
 COPY --from=discourse /home/discourse/discourse/public /home/discourse/discourse/public
 VOLUME /var/nginx/cache
